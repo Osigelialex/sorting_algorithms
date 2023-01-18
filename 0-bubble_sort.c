@@ -1,3 +1,5 @@
+#include "sort.h"
+
 /*
  * bubble_sort - function to perform bubble sort an array
  * @array: Integer list
