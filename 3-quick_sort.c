@@ -35,9 +35,10 @@ void lomuto(int *array, int low, int high, int size)
 	temp = array[j];
 	array[j] = array[high];
 	array[high] = temp;
+	print_array(array, size);
 
 	lomuto(array, low, j - 1, size);
-	lomuto(array, j + 1, high);
+	lomuto(array, j + 1, high, size);
 }
 
 /**
@@ -48,5 +49,7 @@ void lomuto(int *array, int low, int high, int size)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
 	lomuto(array, 0, size - 1, size);
 }
